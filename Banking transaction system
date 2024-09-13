@@ -1,0 +1,60 @@
+//Banking transaction system
+#include <iostream>
+using namespace std;
+int main(){
+	int option , balance = 10000;
+	int deposit , sum , amount;
+	
+
+	do{
+	  cout<<"\t\tMenu"<<endl<<endl;
+	  cout<<"\t1.Check balance"<<endl<<"\t2.Deposit money"<<endl<<"\t3.withdraw money"<<endl<<"\t4.Exit"<<endl<<endl;
+	  	cout<<"Please choose one option below"<<endl;
+	cin>>option;
+	  switch (option){
+	 
+	  	 	case 1: 
+	  	//check balance
+	  	cout<<"Your current balance is "<<balance<<endl<<endl;
+	  	break;
+	  	
+	  	case 2:
+	  	//deposit money
+	  	cout<<"Enter amount you want to depsosit"<<endl;
+	  	cin>>deposit;
+	  	   if (deposit > 0) {
+	  	   	balance = balance + deposit ;
+	  	   }
+	  	   else{
+	  	   	cout<<"Invalid input"<<endl;
+	  	   }
+	  	   	cout<<"Amount deposited sucessfully"<<endl<<"The total amount is "<<balance<<endl<<endl;
+	      break;
+	    
+	        case 3:
+	       //withdraw money
+	       cout<<"Total amount :"<<balance<<endl;
+	       cout<<"Enter amount you want to withdraw"<<endl;
+	  	cin>>amount;
+	       if (amount <= balance){
+	       	balance = balance - amount;
+	       	cout<<"Amount withdrawn succesfully"<<endl<<"Remaining amount : "<<balance<<endl<<endl;
+	       }
+	       	else{
+	       		cout<<"insufficient amount"<<endl;
+	       	}
+	       break;
+	       
+	       case 4:
+	       //Exit 
+	       cout<<"Thanks for using our service"<<endl<<endl;
+	       break;
+	       
+	 default:
+	  cout<<"Invalid input"<<endl;
+	  }
+}
+	     while(option !=4);
+	     
+	return 0;
+}
